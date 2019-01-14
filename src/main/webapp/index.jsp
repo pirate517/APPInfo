@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>后台管理系统</title>
-
+      <base href="<%=request.getContextPath() %>/" />
     <!-- Bootstrap -->
-    <link href="myProjectAssets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="statics/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="myProjectAssets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="statics/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="myProjectAssets/css/nprogress.css" rel="stylesheet">
+    <link href="statics/css/nprogress.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="myProjectAssets/css/custom.min.css" rel="stylesheet">
+    <link href="statics/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="login">
@@ -28,7 +28,8 @@
       <a href="userLoginController/login" class="btn btn-link">后台管理系统 入口</a>
       </div>
       <div>
-      <a href="devLoginController/login" class="btn btn-link">开发者平台 入口</a>
+      <a href="doDevUser/login" class="btn btn-link">开发者平台 入口</a>
+      <%--<a href="doDevUser/login" class="btn btn-link">开发者平台 入口</a>--%>
       </div>
     </div>
   </body>

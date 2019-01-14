@@ -168,4 +168,4 @@
   </div>
 </div>
 <%@include file="common/footer.jsp"%>
-<script src="${pageContext.request.contextPath }/myProjectAssets/localjs/appinfomodify.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/appinfomodify.js"></script>

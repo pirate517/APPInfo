@@ -189,4 +189,4 @@
     </div>
   </div>
   <%@include file="common/footer.jsp"%>
-  <script src="${pageContext.request.contextPath }/myProjectAssets/localjs/appcheck.js"></script>
+  <script src="${pageContext.request.contextPath }/statics/localjs/appcheck.js"></script>

@@ -223,5 +223,5 @@
 </div>
 </div>
 <%@include file="common/footer.jsp"%>
-<script src="${pageContext.request.contextPath }/myProjectAssets/localjs/rollpage.js"></script>
-<script src="${pageContext.request.contextPath }/myProjectAssets/localjs/applist.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/applist.js"></script>

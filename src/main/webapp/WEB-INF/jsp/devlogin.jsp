@@ -12,16 +12,16 @@
     <title>APP开发者平台</title>
 
     <!-- Bootstrap -->
-    <link href="${pageContext.request.contextPath }/myProjectAssets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/statics/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="${pageContext.request.contextPath }/myProjectAssets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/statics/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="${pageContext.request.contextPath }/myProjectAssets/css/nprogress.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/statics/css/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="${pageContext.request.contextPath }/myProjectAssets/css/custom.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/statics/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="login">

@@ -150,4 +150,4 @@
   </div>
 </div>
 <%@include file="common/footer.jsp"%>
-<script src="${pageContext.request.contextPath }/myProjectAssets/localjs/appversionadd.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/appversionadd.js"></script>

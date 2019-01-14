@@ -193,4 +193,4 @@
   </div>
 </div>
 <%@include file="common/footer.jsp"%>
-<script src="${pageContext.request.contextPath }/myProjectAssets/localjs/appinfoview.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/appinfoview.js"></script>
