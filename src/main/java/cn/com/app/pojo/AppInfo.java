@@ -27,9 +27,9 @@ public class AppInfo {
   private Date creationDate;  //创建时间
   private Long modifyBy;  //更新者（来源于dev_user开发者信息表的用户id）
   private Date modifyDate;  //最新更新时间
-  private Long categoryLevel1;  //所属一级分类（来源于：data_dictionary）
-  private Long categoryLevel2;  //所属二级分类（来源于：data_dictionary）
-  private Long categoryLevel3;  //所属三级分类（来源于：data_dictionary）
+  private Long categoryLevel1;  //所属一级分类（来源于：app_category）
+  private Long categoryLevel2;  //所属二级分类（来源于：app_category）
+  private Long categoryLevel3;  //所属三级分类（来源于：app_category）
   private String logoPicPath;  //LOGO图片url路径
   private String logoLocPath;  //LOGO图片的服务器存储路径
   private Long versionId;  //最新的版本id

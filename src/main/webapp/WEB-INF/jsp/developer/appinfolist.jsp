@@ -165,16 +165,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="appInfo" items="${pageInfo.getList()}" varStatus="status">
+								<c:forEach var="appInfo" items="${Page.pageData}" varStatus="status">
+								<%--<c:forEach var="appInfo" items="${pageInfo.getList()}" varStatus="status">--%>
 									<tr role="row" class="odd">
 										<td tabindex="0" class="sorting_1">${appInfo.softwareName}</td>
-										<td>${appInfo.APKName }</td>
+										<td>${appInfo.apkName}</td>
 										<td>${appInfo.softwareSize }</td>
-										<td>${appInfo.flatformName }</td>
-										<td>${appInfo.categoryLevel1Name } -> ${appInfo.categoryLevel2Name } -> ${appInfo.categoryLevel3Name }</td>
-										<td><span id="appInfoStatus${appInfo.id}">${appInfo.statusName }</span></td>
+										<td>${appInfo.flatformId }</td>
+										<td>${appInfo.categoryLevel1 } -> ${appInfo.categoryLevel2 } -> ${appInfo.categoryLevel3 }</td>
+										<td><span id="appInfoStatus${appInfo.id}">${appInfo.status }</span></td>
 										<td>${appInfo.downloads }</td>
-										<td>${appInfo.versionNo != null ? appInfo.versionNo : '暂无'}</td>
+										<td>${appInfo.versionId != null ? appInfo.versionId : '暂无'}</td>
 										<td>
 										<div class="btn-group">
                       <button type="button" class="btn btn-danger">点击操作</button>
@@ -197,11 +198,11 @@
                         </li>
                         <li><a class="modifyVersion" 
 											appinfoid="${appInfo.id }" versionid="${appInfo.versionId }" status="${appInfo.status }" 
-											statusname="${appInfo.statusName }"											
+											statusname="${appInfo.status }"
 											data-toggle="tooltip" data-placement="top" title="" data-original-title="修改APP最新版本信息">修改版本</a>
                         </li>
                         <li><a  class="modifyAppInfo" 
-											appinfoid="${appInfo.id }" status="${appInfo.status }" statusname="${appInfo.statusName }"
+											appinfoid="${appInfo.id }" status="${appInfo.status }" statusname="${appInfo.status }"
 											data-toggle="tooltip" data-placement="top" title="" data-original-title="修改APP基础信息">修改</a></li>
                         <li><a  class="viewApp" appinfoid=${appInfo.id }  data-toggle="tooltip" data-placement="top" title="" data-original-title="查看APP基础信息以及全部版本信息">查看</a></li>
 						<li><a  class="deleteApp" appinfoid=${appInfo.id}  appsoftwarename=${appInfo.softwareName} data-toggle="tooltip" data-placement="top" title="" data-original-title="删除APP基础信息以及全部版本信息">删除</a></li>
@@ -217,37 +218,44 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<div class="dataTables_info" id="datatable-responsive_info"
-							role="status" aria-live="polite">共${pageInfo.total }条记录
-							${pageInfo.pageNum }/${pageInfo.pages }页</div>
+							role="status" aria-live="polite">共${Page.totalRecode }条记录
+							${Page.pageNumber }页</div>
+							<%--${pageInfo.pageNumber }/${pageInfo.pages }页</div>--%>
 					</div>
 					<div class="col-sm-7">
 						<div class="dataTables_paginate paging_simple_numbers"
 							id="datatable-responsive_paginate">
 							<ul class="pagination">
-								<c:if test="${pageInfo.pageNum > 1}">
-									<li class="paginate_button previous"><a
-										href="javascript:page_nav(document.forms[0],1);"
+								<%--<c:if test="${Page.pageNumber > 1}">--%>
+									<%--<li class="paginate_button previous"><a
+										href="${Page.servletURL} javascript:page_nav(document.forms[0],1);"
 										aria-controls="datatable-responsive" data-dt-idx="0"
 										tabindex="0">首页</a>
 									</li>
 									<li class="paginate_button "><a
-										href="javascript:page_nav(document.forms[0],${pageInfo.pageNum-1});"
+										href="${Page.servletURL} javascript:page_nav(document.forms[0],${Page.pageNumber-1});"
 										aria-controls="datatable-responsive" data-dt-idx="1"
 										tabindex="0">上一页</a>
-									</li>
-								</c:if>
-								<c:if test="${pageInfo.pageNum < pageInfo.pages}">
-									<li class="paginate_button "><a
-										href="javascript:page_nav(document.forms[0],${pageInfo.pageNum+1});"
+									</li>--%>
+                                    <li class="paginate_button previous"><a href="${Page.servletURL}1">首页</a>
+                                    </li>
+                                    <li class="paginate_button "><a href="${Page.servletURL}${Page.pageNumber-1>0?Page.pageNumber-1:1}">上一页</a>
+                                    </li>
+								<%--</c:if>--%>
+								<%--<c:if test="${Page.pageNumber < Page.totalPage}">--%>
+									<%--<li class="paginate_button "><a
+										href="${Page.servletURL} javascript:page_nav(document.forms[0],${Page.pageNumber+1});"
 										aria-controls="datatable-responsive" data-dt-idx="1"
 										tabindex="0">下一页</a>
 									</li>
 									<li class="paginate_button next"><a
-										href="javascript:page_nav(document.forms[0],${pageInfo.pages});"
+										href="${Page.servletURL} javascript:page_nav(document.forms[0],${Page.totalPage});"
 										aria-controls="datatable-responsive" data-dt-idx="7"
 										tabindex="0">最后一页</a>
-									</li>
-								</c:if>
+									</li>--%>
+                                    <li class="paginate_button "> <a href="${Page.servletURL}${Page.pageNumber+1>Page.totalPage?Page.totalPage:Page.pageNumber+1}">下一页</a> </li>
+                                    <li class="paginate_button next"> <a href="${Page.servletURL}${Page.totalPage}">最后一页</a> </li>
+								<%--</c:if>--%>
 							</ul>
 						</div>
 					</div>

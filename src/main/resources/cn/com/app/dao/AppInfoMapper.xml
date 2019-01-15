@@ -1,0 +1,58 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.app.dao.AppInfoMapper">
+
+    <resultMap id="appInfo" type="cn.com.app.pojo.AppInfo">
+        <id column="id" property="id"></id>
+        <result column="softwareName" property="softwareName"></result>
+        <result column="apkName" property="apkName"></result>
+        <result column="supportRom" property="supportRom"></result>
+        <result column="interfaceLanguage" property="interfaceLanguage"></result>
+        <result column="softwareSize" property="softwareSize"></result>
+        <result column="updateDate" property="updateDate"></result>
+        <result column="devId" property="devId"></result>
+        <result column="appInfo" property="appInfo"></result>
+        <result column="status" property="status"></result>
+        <result column="onSaleDate" property="onSaleDate"></result>
+        <result column="offSaleDate" property="offSaleDate"></result>
+        <result column="flatformId" property="flatformId"></result>
+        <result column="downloads" property="downloads"></result>
+        <result column="createdBy" property="createdBy"></result>
+        <result column="creationDate" property="creationDate"></result>
+        <result column="modifyBy" property="modifyBy"></result>
+        <result column="modifyDate" property="modifyDate"></result>
+        <result column="categoryLevel1" property="categoryLevel1"></result>
+        <result column="categoryLevel2" property="categoryLevel2"></result>
+        <result column="categoryLevel3" property="categoryLevel3"></result>
+        <result column="logoPicPath" property="logoPicPath"></result>
+        <result column="logoLocPath" property="logoLocPath"></result>
+        <result column="versionId" property="versionId"></result>
+    </resultMap>
+
+    <resultMap id="appInfoExt" type="cn.com.app.pojo.AppInfoExt" extends="appInfo">
+        <association property="devUser" javaType="cn.com.app.pojo.DevUser">
+            <id column="id" property="id"></id>
+            <result column="createdBy" property="createdBy"></result>
+            <result column="modifyBy" property="modifyBy"></result>
+        </association>
+        <association property="dataDictionary" javaType="cn.com.app.pojo.DataDictionary">
+            <id column="id" property="id"></id>
+            <result column="valueName" property="valueName"></result>
+        </association>
+        <association property="appCategory" javaType="cn.com.app.pojo.AppCategory">
+            <id column="id" property="id"></id>
+            <result column="categoryName" property="categoryName"></result>
+        </association>
+    </resultMap>
+
+    <!--总条数-->
+    <select id="totalRecode" resultType="int">
+        select count(1) from app_info;
+    </select>
+
+    <!--无级联查询所有-->
+    <select id="getAppList" parameterType="map" resultMap="appInfoExt">
+        select * from app_info limit #{pageIndex},#{pageSize};
+    </select>
+</mapper>

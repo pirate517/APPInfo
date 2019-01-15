@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>后台管理系统</title>
-      <base href="<%=request.getContextPath() %>/" />
+    <base href="<%=request.getContextPath() %>/" />
     <!-- Bootstrap -->
     <link href="statics/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -28,8 +28,7 @@
       <a href="userLoginController/login" class="btn btn-link">后台管理系统 入口</a>
       </div>
       <div>
-      <a href="doDevUser/login" class="btn btn-link">开发者平台 入口</a>
-      <%--<a href="doDevUser/login" class="btn btn-link">开发者平台 入口</a>--%>
+      <a href="/doDevUser/jump" class="btn btn-link">开发者平台 入口</a>
       </div>
     </div>
   </body>

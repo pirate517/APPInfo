@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.app.dao.DevUserMapper">
+
+    <!--登录sql语句-->
+    <select id="login" parameterType="cn.com.app.pojo.DevUser" resultType="cn.com.app.pojo.DevUser">
+        select * from dev_user where devCode = #{devCode} and devPassword = #{devPassword};
+    </select>
+
+</mapper>
